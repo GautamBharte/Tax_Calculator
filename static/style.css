@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+* {
+    font-family: 'Lora', serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #ffffff;
+    color: #4e4e4e;
+}
+
+.main-cal-window{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.heading{
+    font-size: 1.3rem;
+}
+
+.input{
+    margin-top: 1.5rem;
+}
+
+.networth-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0.5rem;
+}
+.networth-input h4{
+    width: 15rem;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    margin: 1rem;
+}
+.button input{
+    height: 30px;
+    width: 70px;
+    background-color: #adadad;
+    border: 1px solid rgb(211, 204, 204);
+    pointer-events: stroke;
+}
+.button input:hover{
+    background-color: #797777;
+    border: 1px solid rgb(211, 204, 204);
+}
+
+.final-statement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.documentation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 5rem;
+    font-size: 1.3rem;
+}
+.documentation p{
+    margin: 25px 0px;
+}

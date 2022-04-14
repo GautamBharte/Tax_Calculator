@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+
+
+    <form method="GET" action="{% url 'submitquerry' %}">
+        <div class="main-cal-window">
+            <div class="heading">
+                <h3>Taxation of trading/business income</h3>
+            </div>
+            <div class="input">
+                <div class="networth-input">
+                    <h4>Income Salary</h4>
+                    <input type="search" class="form-control" name="Salary_income" id="Salary_income">
+                </div>
+                <div class="networth-input">
+                    <h4>FO_trading</h4>
+                    <input type="search" class="form-control" name="FO_trading" id="FO_trading">
+                </div>
+                <div class="networth-input">
+                    <h4>Intraday_Trading</h4>
+                    <input type="search" class="form-control" name="Intraday_Trading" id="Intraday_Trading">
+                </div>
+                <div class="networth-input">
+                    <h4>Short_Term_Capital_Gain</h4>
+                    <input type="search" class="form-control" name="Short_Term_Capital_Gain"
+                        id="Short_Term_Capital_Gain">
+                </div>
+                <div class="networth-input">
+                    <h4>intrest_income</h4>
+                    <input type="search" class="form-control" name="intrest_income" id="intrest_income">
+                </div>
+                <div class="networth-input">
+                    <h4>loss_Gain</h4>
+                    <input type="search" class="form-control" name="loss_Gain" id="loss_Gain">
+                </div>
+
+
+                <div class="row">
+                    <div class="button">
+                        <input type="submit" class="btn btn-success" style="display: block; margin: 0 auto;">
+                    </div>
+                    <div class="button">
+                        <input type="reset" class="btn btn-danger" style="display: block; margin: 0 auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    {% if errorStatus %}
+    <div class="final-statement">
+        <h3>Your Net Annual intrest is {{tax}}</h3>
+    </div>
+    {% endif %}
+
+
+    <div class="documentation">
+        <h2>--Documentation--</h2>
+        <div class="exp">
+        <p>Unlike capital gains, there is no fixed taxation rate when you have a business income. Speculative and
+            non-speculative business income has to be added to all your other income (salary, other business income, bank
+            interest, rental income, and others), and taxes paid according to the tax slab you fall in. You can refer to
+            chapter 1 for tax slabs as applicable for FY 2020-21.</p>
+        <p>Let take explain:</p>
+        <ul>
+            <li>My salary – Rs.1,000,000/-</li>
+            <li>Short term capital gains from delivery based equity – Rs.100,000/-</li>
+            <li>Profits from F&O trading – Rs.100,000/-</li>
+            <li>Intraday equity trading – Rs.100,000/-</li>
+        </ul>
+        <p>Gives these incomes for the year, what is my tax liability?</p>
+        <p>In order to find out my tax liability, I need to calculate my total income by summing up salary, and all
+            business income (speculative and non-speculative). The reason capital gains are not added is that capital gains
+            have fixed taxation rates unlike a salary, or business income.</p>
+        <p>Total income (salary + business) = Rs.1,000,000 (salary income) + Rs.100,000 (Profits from F&O trading) +
+            Rs.100,000 (Intraday equity trading) = Rs 1,200,000/-</p>
+        <ul>
+            <li>0 – Rs.250,000 : 0% – Nil</li>
+            <li>250,000 – Rs.500,000 : 5% – Rs.12,500/-</li>
+            <li>500,000 – Rs.1,000,000 : 20% – Rs.100,000/-,</li>
+            <li>1,000,000 – 1,200,000: 30% – Rs.60,000/-</li>
+        </ul>
+        <p>Hence total tax : 12,500 + Rs.100,000 + Rs.60,000 = Rs.172,500/-
+            Now, I also have an additional income of Rs.100,000/- classified under short term capital gains from delivery
+            based equity. The tax rate on this is flat 15%.</p>
+        <p>STCG: Rs 100,000/-, so at 15%, tax liability is Rs.15,000/-</p>
+        <p>Total tax = Rs.172,500 + Rs.15,000 = Rs.187,500/-</p>
+    </div>
+    </div>
+
+    
+
+</body>
+
+</html>
